@@ -8,28 +8,22 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import java.util.List;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 class CalculateCustomerLoansTest {
 
   @Test
   void shouldReturnAllLoanTypesWhenAllConditionsAreMet() {
-    LoanEligibilityChecker mockEligibilityChecker = mock(LoanEligibilityChecker.class);
+    LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
+    CalculateCustomerLoans calculator = new CalculateCustomerLoans(eligibilityChecker);
+
     CustomerLoansInputDTO inputDTO = new CustomerLoansInputDTO(25, "275.484.389-23", "Teste", new BigDecimal(4000), "SP");
 
-    // Mockar os métodos do LoanEligibilityChecker
-    when(mockEligibilityChecker.isPersonalLoan(inputDTO)).thenReturn(true);
-    when(mockEligibilityChecker.isGuaranteedLoan(inputDTO)).thenReturn(true);
-    when(mockEligibilityChecker.isConsignmentLoan(inputDTO)).thenReturn(true);
-
-    CalculateCustomerLoans calculator = new CalculateCustomerLoans(mockEligibilityChecker);
-
+    // Executa o cálculo com a implementação real
     List<LoanType> loanTypes = calculator.calculate(inputDTO);
 
-    Assertions.assertTrue(loanTypes.contains(LoanType.PERSONAL));
-    Assertions.assertTrue(loanTypes.contains(LoanType.GUARANTEED));
-    Assertions.assertTrue(loanTypes.contains(LoanType.CONSIGNMENT));
-    Assertions.assertEquals(3, loanTypes.size());
+    // Verifica se todos os tipos de empréstimos esperados estão na lista
+    Assertions.assertTrue(loanTypes.contains(LoanType.PERSONAL), "Personal loan should be available");
+    Assertions.assertTrue(loanTypes.contains(LoanType.GUARANTEED), "Guaranteed loan should be available");
+    Assertions.assertTrue(loanTypes.contains(LoanType.CONSIGNMENT), "Consignment loan should be available");
+    Assertions.assertEquals(3, loanTypes.size(), "Should return exactly 3 loan types");
   }
 }

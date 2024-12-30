@@ -18,9 +18,9 @@ public class CalculateCustomerLoans {
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
     List<LoanType> loans = new ArrayList<>();
-    if (eligibilityChecker.isPersonalLoan(input)) loans.add(LoanType.PERSONAL);
-    if (eligibilityChecker.isGuaranteedLoan(input)) loans.add(LoanType.GUARANTEED);
-    if (eligibilityChecker.isConsignmentLoan(input)) loans.add(LoanType.CONSIGNMENT);
+    if (eligibilityChecker.isPersonalLoan.test(input)) loans.add(LoanType.PERSONAL);
+    if (eligibilityChecker.isGuaranteedLoan.test(input)) loans.add(LoanType.GUARANTEED);
+    if (eligibilityChecker.isConsignmentLoan.test(input)) loans.add(LoanType.CONSIGNMENT);
 
     return loans;
   }

@@ -19,7 +19,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isConsignmentLoan = eligibilityChecker.isConsignmentLoan(inputDTO);
+    boolean isConsignmentLoan = eligibilityChecker.isConsignmentLoan.test(inputDTO);
 
     Assertions.assertTrue(isConsignmentLoan);
   }
@@ -35,7 +35,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isConsignmentLoan = eligibilityChecker.isConsignmentLoan(inputDTO);
+    boolean isConsignmentLoan = eligibilityChecker.isConsignmentLoan.test(inputDTO);
 
     Assertions.assertFalse(isConsignmentLoan);
   }
@@ -51,7 +51,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan(inputDTO);
+    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan.test(inputDTO);
 
     Assertions.assertTrue(isGuaranteedLoan);
   }
@@ -67,7 +67,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan(inputDTO);
+    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan.test(inputDTO);
 
     Assertions.assertFalse(isGuaranteedLoan);
   }
@@ -83,7 +83,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan(inputDTO);
+    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan.test(inputDTO);
 
     Assertions.assertFalse(isGuaranteedLoan);
   }
@@ -99,7 +99,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan(inputDTO);
+    boolean isGuaranteedLoan = eligibilityChecker.isGuaranteedLoan.test(inputDTO);
 
     Assertions.assertFalse(isGuaranteedLoan);
   }
@@ -115,7 +115,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isPersonalLoan = eligibilityChecker.isPersonalLoan(inputDTO);
+    boolean isPersonalLoan = eligibilityChecker.isPersonalLoan.test(inputDTO);
 
     Assertions.assertTrue(isPersonalLoan);
   }
@@ -131,7 +131,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isPersonalLoan = eligibilityChecker.isPersonalLoan(inputDTO);
+    boolean isPersonalLoan = eligibilityChecker.isPersonalLoan.test(inputDTO);
 
     Assertions.assertTrue(isPersonalLoan);
   }
@@ -147,7 +147,7 @@ class LoanEligibilityCheckerTest {
     );
     LoanEligibilityChecker eligibilityChecker = new LoanEligibilityChecker();
 
-    boolean isPersonalLoan = eligibilityChecker.isPersonalLoan(inputDTO);
+    boolean isPersonalLoan = eligibilityChecker.isPersonalLoan.test(inputDTO);
 
     Assertions.assertFalse(isPersonalLoan);
   }
